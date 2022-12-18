@@ -14,6 +14,7 @@ fetch('https://api.chess.com/pub/leaderboards')
     .then(data => {
 
         topThreePlayers(data)
+        leaderboardPlayer(data)
     })
 
 
@@ -33,4 +34,16 @@ function topThreePlayers(data) {
         leaderBoardCards[j].querySelector('.btn-outline-info').href = `https://www.chess.com/member/${data.battle[j].username}`
     }
 
+}
+
+function leaderboardPlayer(data) {
+    // Set const for all values
+    const leaderBoardButton = document.querySelectorAll('.leaderboard-btn')
+
+
+    for (i = 0; i < 10; i++) {
+
+        leaderBoardButton[i].textContent = data.battle[i].username
+
+    }
 }
