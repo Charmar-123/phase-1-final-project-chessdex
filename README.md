@@ -21,6 +21,8 @@ ChessDex is a single page application that allows the user to:
 
 ChessDex uses the Twitter Bootstrap open source project.
 
+The API used and documentation can be found at https://www.chess.com/news/view/published-data-api
+
 
 
 
