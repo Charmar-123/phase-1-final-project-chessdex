@@ -17,6 +17,12 @@
 #information-input h1{
     font-family: sans-serif;
     font-weight: bolder;
+    padding-bottom: 1rem;
+}
+
+#information-input h2{
+    font-family: sans-serif tahoma;
+    color: #3C4048;
 }
 
 #input-field {
