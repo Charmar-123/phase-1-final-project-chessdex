@@ -1,7 +1,9 @@
 # CheesDex
 ## _The Database for all Chess.com Players_
 
+<img src="images/website-screenshot.png" alt="drawing" style="width:200px;"/>
 
+<hr>
 
 ChessDex is a single page application that allows the user to:
 
