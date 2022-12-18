@@ -1,3 +1,5 @@
+// Change the color of the input filed when clicked on
+
 const nameSearch = document.querySelector('input[type="search"]');
 
 nameSearch.addEventListener('focus', (event) => {
@@ -8,6 +10,7 @@ nameSearch.addEventListener('blur', (event) => {
   event.target.style.background = '';
 });
 
+//Fetch the data from the Chess.com API and invoke the functions
 
 fetch('https://api.chess.com/pub/leaderboards')
     .then(res => res.json())
@@ -20,7 +23,7 @@ fetch('https://api.chess.com/pub/leaderboards')
 
 
 
-
+// Populate the top three players card with data from Chess.com API and add event listner to the Follow! button
 
 function topThreePlayers(data) {
     const leaderBoardCards = [document.querySelector('#first-place'), document.querySelector('#second-place'), document.querySelector('#third-place')]
@@ -71,6 +74,7 @@ function leaderboardPlayer(data) {
     }
 }
 
+//Populate a card with the information of the username from the input field
 
 function getChessPlayerName() {
     document.querySelector('#search-btn').addEventListener('click', function () {
@@ -119,6 +123,9 @@ function populateCard(data) {
 
     }, { once: true })
 }
+
+
+// Create a card and add it to the carousel at the bottom along with a delete button
 
 function followButton(data) {
 
