@@ -92,7 +92,14 @@ function populateCard(data) {
     document.querySelector('.leaderboard-list').style.height = '45rem'
     document.querySelector('.pop-up-follow').style.backgroundColor = ""
     document.querySelector('.pop-up-follow').innerText = "Follow!"
+    document.querySelector('.pop-up-follow').parentElement.innerHTML = document.querySelector('.pop-up-follow').parentElement.innerHTML
 
+    document.querySelector('.pop-up-follow').addEventListener("click", (event) => {
+        followButton(data)
+        event.target.style.backgroundColor = "grey"
+        event.target.innerText = "✔️"
+
+    }, { once: true })
 }
 
 function followButton(data) {
@@ -124,3 +131,9 @@ function followButton(data) {
     })
 
 }
+
+// Get country by two letter ID
+
+const regionNames = new Intl.DisplayNames(
+    ['en'], {type: 'region'}
+  );
