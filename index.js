@@ -94,3 +94,4 @@ function populateCard(data) {
     document.querySelector('.pop-up-follow').innerText = "Follow!"
 
 }
+
