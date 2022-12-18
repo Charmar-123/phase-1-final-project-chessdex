@@ -44,6 +44,15 @@ function leaderboardPlayer(data) {
     for (i = 0; i < 10; i++) {
 
         leaderBoardButton[i].textContent = data.battle[i].username
+        leaderBoardButton[i].addEventListener('mouseenter', (event) => {
+            fetch(`https://api.chess.com/pub/player/${event.target.textContent}`)
+                .then(res => res.json())
+                .then(data => {
+                    populateCard(data)
+                    
+
+                })
+        })
 
     }
 }
