@@ -129,7 +129,7 @@ function populateCard(data) {
 function followButton(data) {
 
     const cardHtml = `<div class= "card carousel-player-card" style="width: 18rem;">
-    <img class="card-img-top carousel-img" src="${data.avatar}" alt="No User Image">
+    <img class="card-img-top carousel-img" src="${data.avatar}" alt="No User Image" onerror="this.src='images/chess-pawn.png'">
     <div class="card-body">
     <h5 class="card-title card-title-carousel"> ${data.username}</h5>
     </div>
