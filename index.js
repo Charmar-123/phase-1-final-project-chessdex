@@ -57,6 +57,26 @@ function leaderboardPlayer(data) {
     }
 }
 
+function getChessPlayerName() {
+    document.querySelector('#search-btn').addEventListener('click', function () {
+        const value = document.querySelector('#input-name').value
+        fetch(`https://api.chess.com/pub/player/${value}`)
+            .then(function (res) {
+                if (res.ok) {
+                    return res.json()
+                } else {
+                    alert("Username does not exist!")
+                    throw res.status;
+                }
+            })
+            .then(data => {
+
+                populateCard(data)
+
+            })
+    })
+
+}
 function populateCard(data) {
     document.querySelectorAll('.place-card').forEach(element => element.style.display = 'none')
     document.querySelector('#pop-up-card').style.display = 'block'
