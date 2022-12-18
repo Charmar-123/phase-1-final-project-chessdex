@@ -18,3 +18,35 @@
     padding-top: 4%;
     width: 30%;
 }
+
+#leaderboard{
+    background-color: #97DECE;
+}
+
+
+
+.leaderboard-btn{
+    margin-top: 2rem;
+    width: 12rem;
+}
+
+#second-place{
+    padding-top: 6rem;
+}
+
+#third-place{
+    padding-top: 6rem;
+}
+
+#pop-up-card{
+    display: none;
+}
+
+.pop-up-player-card{
+    margin-left: 7rem;
+
+}
+
+.leaderboard-list{
+    height: 60rem;
+}
