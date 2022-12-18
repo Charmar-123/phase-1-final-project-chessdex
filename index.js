@@ -95,3 +95,27 @@ function populateCard(data) {
 
 }
 
+function followButton(data) {
+
+    const cardHtml = `<div class= "card carousel-player-card" style="width: 18rem;">
+    <img class="card-img-top carousel-img" src="${data.avatar}" alt="No User Image">
+    <div class="card-body">
+    <h5 class="card-title card-title-carousel"> ${data.username}</h5>
+    </div>
+    <ul class="list-group list-group-flush carousel-group">
+    <li class="list-group-item">Player ID: ${data.player_id}</li>
+    <li class="list-group-item">Country: ${regionNames.of(data.country.slice(-2))}</li>
+    <li class="list-group-item">Status: ${data.status}</li></ul>
+    <div class="card-body">
+    <button class="btn btn-danger">Delete!</button>
+    <a href="https://www.chess.com/member/${data.username}" class="btn btn-outline-info carousel-profile" target="_blank">Profile</a></div>
+     </div >`
+
+    const carouselElem = document.createElement('div')
+    carouselElem.className = "carousel-item"
+    carouselElem.innerHTML = cardHtml
+
+    document.querySelector(".carousel-inner").append(carouselElem)
+
+
+}
