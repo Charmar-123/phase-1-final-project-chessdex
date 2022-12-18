@@ -10,7 +10,7 @@
 
 #information-input {
     padding-top: 5%;
-    padding-bottom: 10%;
+    padding-bottom: 5%;
     background-color: #62B6B7;
 }
 
@@ -28,6 +28,9 @@
     background-color: #97DECE;
 }
 
+.leaderboard-list{
+    padding-bottom: 2rem;
+}
 
 
 .leaderboard-btn{
