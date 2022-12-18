@@ -32,6 +32,18 @@ function topThreePlayers(data) {
         leaderBoardCards[j].querySelector('.leaderboard-group').children[1].textContent = `Country: ${regionNames.of(data.battle[j].country.slice(-2))}`
         leaderBoardCards[j].querySelector('.leaderboard-group').children[2].textContent = `Status: ${data.battle[j].status}`
         leaderBoardCards[j].querySelector('.btn-outline-info').href = `https://www.chess.com/member/${data.battle[j].username}`
+        leaderBoardCards[j].querySelector('.btn-outline-danger').addEventListener("click", (event) => {
+            const name = event.target.parentElement.parentElement.querySelector('.card-title-leaderboard').textContent;
+            event.target.style.backgroundColor = "grey"
+            event.target.innerText = "✔️"
+
+            fetch(`https://api.chess.com/pub/player/${name}`)
+                .then(res => res.json())
+                .then(data => {
+                    followButton(data)
+                    console.log(event);
+                })
+        }, { once: true })
     }
 
 }
