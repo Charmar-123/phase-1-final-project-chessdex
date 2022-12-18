@@ -117,5 +117,10 @@ function followButton(data) {
 
     document.querySelector(".carousel-inner").append(carouselElem)
 
+    carouselElem.querySelector('.btn-danger').addEventListener("click", (event) => {
+        // console.log(event.target.parentElement.parentElement.parentElement);
+        event.target.parentElement.parentElement.parentElement.remove()
+        document.querySelector('#carousel-img').className += ' active'
+    })
 
 }
