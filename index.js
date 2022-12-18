@@ -111,7 +111,6 @@ function populateCard(data) {
     document.querySelector('.pop-up-group').children[2].textContent = `Status: ${data.status}`
     document.querySelector('.pop-up-profile').href = `https://www.chess.com/member/${data.username}`
 
-    document.querySelector('.leaderboard-list').style.height = '45rem'
     document.querySelector('.pop-up-follow').style.backgroundColor = ""
     document.querySelector('.pop-up-follow').innerText = "Follow!"
     document.querySelector('.pop-up-follow').parentElement.innerHTML = document.querySelector('.pop-up-follow').parentElement.innerHTML

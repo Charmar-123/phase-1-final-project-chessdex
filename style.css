@@ -14,6 +14,11 @@
     background-color: #62B6B7;
 }
 
+#information-input h1{
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+
 #input-field {
     padding-top: 4%;
     width: 30%;
@@ -47,9 +52,6 @@
 
 }
 
-.leaderboard-list{
-    height: 60rem;
-}
 
 #carousel-container{
     background-color: #CBEDD5;
