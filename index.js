@@ -13,8 +13,9 @@ fetch('https://api.chess.com/pub/leaderboards')
     .then(res => res.json())
     .then(data => {
 
-        topThreePlayers(data)
-        leaderboardPlayer(data)
+        topThreePlayers(data);
+        leaderboardPlayer(data);
+        getChessPlayerName();
     })
 
 
@@ -40,17 +41,18 @@ function topThreePlayers(data) {
             fetch(`https://api.chess.com/pub/player/${name}`)
                 .then(res => res.json())
                 .then(data => {
-                    followButton(data)
-                    console.log(event);
+                    followButton(data);
                 })
         }, { once: true })
     }
 
 }
 
+// Leaderboard list with event listener to display single card
+
 function leaderboardPlayer(data) {
-    // Set const for all values
-    const leaderBoardButton = document.querySelectorAll('.leaderboard-btn')
+
+    const leaderBoardButton = document.querySelectorAll('.leaderboard-btn');
 
 
     for (i = 0; i < 10; i++) {
@@ -60,7 +62,7 @@ function leaderboardPlayer(data) {
             fetch(`https://api.chess.com/pub/player/${event.target.textContent}`)
                 .then(res => res.json())
                 .then(data => {
-                    populateCard(data)
+                    populateCard(data);
                     
 
                 })
@@ -69,9 +71,10 @@ function leaderboardPlayer(data) {
     }
 }
 
+
 function getChessPlayerName() {
     document.querySelector('#search-btn').addEventListener('click', function () {
-        const value = document.querySelector('#input-name').value
+        const value = document.querySelector('#input-name').value;
         fetch(`https://api.chess.com/pub/player/${value}`)
             .then(function (res) {
                 if (res.ok) {
@@ -83,12 +86,15 @@ function getChessPlayerName() {
             })
             .then(data => {
 
-                populateCard(data)
+                populateCard(data);
 
             })
     })
 
 }
+
+// Populate the pop-up card and hide top three
+
 function populateCard(data) {
     document.querySelectorAll('.place-card').forEach(element => element.style.display = 'none')
     document.querySelector('#pop-up-card').style.display = 'block'
@@ -107,7 +113,7 @@ function populateCard(data) {
     document.querySelector('.pop-up-follow').parentElement.innerHTML = document.querySelector('.pop-up-follow').parentElement.innerHTML
 
     document.querySelector('.pop-up-follow').addEventListener("click", (event) => {
-        followButton(data)
+        followButton(data);
         event.target.style.backgroundColor = "grey"
         event.target.innerText = "✔️"
 
@@ -130,14 +136,13 @@ function followButton(data) {
     <a href="https://www.chess.com/member/${data.username}" class="btn btn-outline-info carousel-profile" target="_blank">Profile</a></div>
      </div >`
 
-    const carouselElem = document.createElement('div')
-    carouselElem.className = "carousel-item"
-    carouselElem.innerHTML = cardHtml
+    const carouselElem = document.createElement('div');
+    carouselElem.className = "carousel-item";
+    carouselElem.innerHTML = cardHtml;
 
     document.querySelector(".carousel-inner").append(carouselElem)
 
     carouselElem.querySelector('.btn-danger').addEventListener("click", (event) => {
-        // console.log(event.target.parentElement.parentElement.parentElement);
         event.target.parentElement.parentElement.parentElement.remove()
         document.querySelector('#carousel-img').className += ' active'
     })

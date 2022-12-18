@@ -50,3 +50,33 @@
 .leaderboard-list{
     height: 60rem;
 }
+
+#carousel-container{
+    background-color: #CBEDD5;
+
+}
+#carouselExampleDark{
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 50rem;
+    padding-top: 3rem;
+}
+
+.carousel-player-card{
+    margin: auto;
+    margin-bottom: 7rem;
+}
+
+#carousel-img{
+    height: 660px;
+    width: 660px;
+
+}
+
+#favourite-img{
+    size: 70%;
+    margin-left: 150px;
+    margin-top: 200px;
+}
